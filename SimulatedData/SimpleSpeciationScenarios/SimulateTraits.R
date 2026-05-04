@@ -4,13 +4,11 @@
 # A script to simulate continuous traits on several newick trees saved in a file.
 
 # To install the required packages, uncomment the lines below
-#devtools::install_github("KlausVigo/phangorn")
-#install.packages("ape",repos="https://cloud.r-project.org")
-#install.packages("diversitree",repos="https://cloud.r-project.org")
-#install.packages("geiger",repos="https://cloud.r-project.org")
-#install.packages("phytools",repos="https://cloud.r-project.org")
-#install.packages("reticulate")
-#install.packages(c( "foreach", "doParallel") )
+# install.packages("ape",repos="https://cloud.r-project.org")
+# install.packages("geiger",repos="https://cloud.r-project.org")
+# install.packages("phytools",repos="https://cloud.r-project.org")
+# install.packages("reticulate")
+# install.packages(c( "foreach", "doParallel") )
 
 # Load the required packages.
 library(ape)
@@ -23,7 +21,7 @@ library(reticulate)
 np <- import("numpy",convert=F)
 
 #setup parallel backend to use many processors.
-cl <- makeCluster(20) #This is to use 20 cores, adjust accordingly (leaving at least one free core). Alternatively one can use detectCores() function.
+cl <- makeCluster(5) #This is to use 10 cores, adjust accordingly (leaving at least one free core). Alternatively one can use detectCores() function.
 registerDoParallel(cl)
 
 #Create a folder for storing the simulated traits.
@@ -102,4 +100,3 @@ traits_disc<-foreach(i=1:nrow(trees),.combine=rbind,.packages = c("phytools","ap
 write.table(as.matrix(traits_disc),"./traits/traits_disc.txt",row.names=F,col.names=F,quote=F)
 # Stop the parallel process.
 stopImplicitCluster()	
-
