@@ -28,4 +28,4 @@ input_traits_bal.txt - Traits for the *Euphorbia balsamifera* subsp. *balsamifer
 
 input_traits_sep.txt - Traits for the *Euphorbia balsamifera* subsp. *sepium*
 
-TrainedModels - Folder containing all the trained models resulting from running the file "Train_Test_Predict.ipynb".
+Extract_SNPs.R - R script to extract the single SNP from each locus having the fewest missing values.
