@@ -6,5 +6,3 @@ for the simulated dataset under the simple speciation scenarios.
 
 SpDel_SNP_Traits_Migration.ipynb -  python notebook containing code and outputs for training and cross-validation 
 for the simulated dataset under the simple speciation scenarios.
-
-TrainedModels - Folder containing all the trained models resulting from running the file "Migration_WeightedAverage_Test_SNPs_Traits.ipynb".
